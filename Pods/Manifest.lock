@@ -1,4 +1,7 @@
 PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - MMDrawerController (0.5.7):
     - MMDrawerController/Core (= 0.5.7)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
@@ -11,11 +14,16 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
+  - YYText (1.0.7)
 
 DEPENDENCIES:
+  - FMDB
   - MMDrawerController (~> 0.5.7)
+  - YYText
 
 SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
 COCOAPODS: 0.39.0
