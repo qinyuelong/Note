@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MMDrawerController+Subclass.h>
 
-@interface ViewController : UIViewController
+@interface ViewController :MMDrawerController
 
 
 @end

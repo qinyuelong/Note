@@ -7,6 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "MainMenuNavigationController.h"
+#import "MainMenuViewController.h"
+
+#import "MainContentNavigationController.h"
+#import "MainContentViewController.h"
 
 @interface ViewController ()
 
@@ -16,7 +21,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    UINavigationController *menuNVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([MainMenuNavigationController class])];
+    UINavigationController *contentNVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([MainContentNavigationController class])];
+    
+    [self setLeftDrawerViewController:menuNVC];
+    [self setCenterViewController:contentNVC];
+    
+    [self setShowsShadow:NO];
+    [self setRestorationIdentifier:@"MMDrawer"];
+//    [self setMaximumRightDrawerWidth:200.0];
+    [self setMaximumLeftDrawerWidth:self.view.frame.size.width - 60];
+    [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+
 }
 
 - (void)didReceiveMemoryWarning {
