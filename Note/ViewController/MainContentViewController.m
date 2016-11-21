@@ -5,13 +5,21 @@
 //  Created by qinge on 16/9/18.
 //  Copyright © 2016年 qin. All rights reserved.
 //
+//  http://www.appcoda.com.tw/custom-search-bar-tutorial/
+//  http://www.jianshu.com/p/c6bfadb4bfff
+//  http://www.jianshu.com/p/66b5b777f5dc
+
+
+//  https://github.com/zhengwenming/ExpandTableView (qq 分组)
 
 #import "MainContentViewController.h"
 #import "ViewController.h"
 #import "NoteSectionHeader.h"
 
-@interface MainContentViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MainContentViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UISearchController *searchController;
+
 
 @end
 
@@ -19,8 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableView.rowHeight = 115.0;
 
+    [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +53,9 @@
     [parentVC setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeNone];
 }
 
+
+
+
 /*
 #pragma mark - Navigation
 
@@ -55,6 +66,26 @@
 }
 */
 
+#pragma mark - setup views
+
+-(void)setupViews{
+    _tableView.rowHeight = 115.0;
+    
+    
+//    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+//    // Use the current view controller to update the search results.
+//    self.searchController.searchResultsUpdater = self;
+//    self.searchController.searchBar.backgroundColor = [UIColor orangeColor];
+//    self.tableView.tableHeaderView = _searchController.searchBar;
+    
+}
+
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    NSLog(@"%s", __FUNCTION__);
+}
 
 #pragma mark - UITableViewDataSource
 

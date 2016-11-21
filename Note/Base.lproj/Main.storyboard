@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tkT-I6-ICB">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -42,7 +43,10 @@
                             <constraint firstAttribute="bottom" secondItem="pt7-Yq-qqA" secondAttribute="bottom" id="r8q-Yg-VWW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Main" id="sjh-qe-aRo"/>
+                    <navigationItem key="navigationItem" title="Main" id="sjh-qe-aRo">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="fnt-KP-gq2"/>
+                        <barButtonItem key="rightBarButtonItem" title="新建" id="s5H-pm-eNf"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="pt7-Yq-qqA" id="Ccv-Bh-rPF"/>
